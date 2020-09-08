@@ -12,7 +12,7 @@ stages {
   stage('compile') {
     steps {
 		echo "COMPLIE STAGE"
-		git 'https://github.com/simisag/DevOpsClassCodes/'
+		git 'https://github.com/lerndevops/DevOpsClassCodes'
 		sh 'maven compile'
 	  
     }
@@ -35,6 +35,7 @@ stages {
   stage('UnitTest') {
     steps {
       sh 'maven test'
+	  }
 
     post {
       success {
@@ -61,6 +62,6 @@ stages {
     }
   }
 
-}
 
+}
 }
