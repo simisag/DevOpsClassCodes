@@ -12,7 +12,7 @@ stages {
   stage('compile') {
     steps {
 		echo "COMPLIE STAGE"
-		git 'https://github.com/lerndevops/DevOpsClassCodes'
+		git 'https://github.com/simisag/DevOpsClassCodes/'
 		sh 'maven compile'
 	  
     }
