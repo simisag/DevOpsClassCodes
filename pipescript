@@ -34,7 +34,7 @@ stages {
 
   stage('UnitTest') {
     steps {
-      sh 'mvnn test'
+      sh 'mvn test'
 	  }
 
     post {
