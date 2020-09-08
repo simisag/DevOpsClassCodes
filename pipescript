@@ -13,7 +13,7 @@ stages {
     steps {
 		echo "COMPLIE STAGE"
 		git 'https://github.com/lerndevops/DevOpsClassCodes'
-		sh 'maven compile'
+		sh 'mvn compile'
 	  
     }
   }
@@ -22,7 +22,7 @@ stages {
     steps {
 		echo "Code review"
 	
-		sh '-P metrics pmd:pmd'
+		sh 'mvn -P metrics pmd:pmd'
     }
 
     post {
@@ -34,7 +34,7 @@ stages {
 
   stage('UnitTest') {
     steps {
-      sh 'maven test'
+      sh 'mvnn test'
 	  }
 
     post {
@@ -46,7 +46,7 @@ stages {
 
   stage('CodeCoverage') {
     steps {
-      sh 'maven cobertura:cobertura -Dcobertura.report.format=xml'
+      sh 'mvn cobertura:cobertura -Dcobertura.report.format=xml'
     }
 
     post {
@@ -58,7 +58,7 @@ stages {
 
   stage('package') {
     steps {
-      sh 'maven package'
+      sh 'mvn package'
     }
   }
 
