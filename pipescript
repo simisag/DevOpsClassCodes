@@ -34,12 +34,13 @@ stages {
 
   stage('UnitTest') {
     steps {
+      echo "Unit Test"	
       sh 'mvn test'
 	  }
 
     post {
       success {
-        junit '/target/surefire-reports/*.xml'
+        junit 'target/surefire-reports/*.xml'
       }
     }
   }
@@ -58,6 +59,7 @@ stages {
 
   stage('package') {
     steps {
+      echo "Package"
       sh 'mvn package'
     }
   }
